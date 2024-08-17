@@ -4,9 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple News App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            font-family: "Kanit", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 1.2vw;
+            padding: 0.5rem;
+            background-color: #f4cdfe;
+            text-align: center;
+        }
+        @keyframes textShadowAnimation{
+            0% {text-shadow: #f66b2b -3rem -3rem;}
+            25% {text-shadow: #fa8f9a -2rem -2rem;}
+            50% {text-shadow: #a04bb5 0rem 0rem;}
+            75% {text-shadow: #fa8f9a -2rem -2rem;}
+            100%{text-shadow: #f66b2b -3rem -3rem;}
+        }
+        #main-title{
+            font-size: 7.5rem;
+            color: #a04bb5;
+            animation-name: textShadowAnimation;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            margin: 1rem;
+            transition: 1s;
+        }
+        #main-title:hover{
+            color: #dc2179;
+            transition: 1s;
+            cursor: pointer;
+        }
+
+        span{
+            margin-right: 1rem;
+        }
+        #news{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .articleDiv{
+            background-color: #9bd2cd;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            width: 15rem;
+        }
+
+        .articleDiv h1{
+            color: #a04bb5;
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+            transition: 1s;
+        }
+
+        .articleDiv h3{
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .articleDiv a{
+            color: #6184b2;
+            text-decoration: none;
+        }
+        #srcFilter{
+            margin: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #srcFilter button{
+            border: none;
+            padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+            font-family: "Kanit", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 1rem;
+            border-radius: 0.2rem;
+            transition: 0.2s;
+        }
+
+        #srcFilter button:hover{
+            padding-right: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        #srcFilter button:hover::after{
+            content: " >>";
+        }
+    </style>
 </head>
 <body>
-    <h1>Top Headlines</h1>
+    <h1 id="main-title">Top Headlines</h1>
+    <div id="srcFilter">Filter By Source: </div>
     <div id="news"></div>
     <script src="scripts.js" type="module"></script>
 </body>
